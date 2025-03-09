@@ -13,12 +13,13 @@ export default function OpeningScreen({ hamburgerMenuOpen, toggleHamburgerMenu }
       </div>
 
       {/* Render the video */}
-      <video autoPlay loop muted className="absolute top-0 left-0 z-0 object-cover w-screen h-screen">
+    <video autoPlay loop muted className="absolute top-0 left-0 z-0 object-cover w-full h-full">
         <source src={backgroundVideo} type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
-    
-      {/* Render the hamburger button */}
+    </video>
+
+
+        {/* Render the hamburger button */}
       <div className={`absolute top-5 left-5 z-30 ${hamburgerMenuOpen ? 'hidden' : 'block'}`}>
         <button onClick={toggleHamburgerMenu} className="p-2 rounded-full bg-[#b5f727] hover:bg-green-700">
           <img src={hamburgerIcon} alt="Menu" className="w-8 h-8" />

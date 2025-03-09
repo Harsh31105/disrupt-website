@@ -35,7 +35,7 @@ export default function HamburgerMenuOpen({
           className={`
         fixed top-0 left-0 z-50 flex flex-col h-screen
         transform transition-transform duration-300
-        bg-blue-500 /* 这里随便写菜单背景色 */
+        bg-blue-500
         w-64
         ${hamburgerMenuOpen ? "translate-x-0" : "-translate-x-full"}
       `}
@@ -105,7 +105,7 @@ function NavItem({ to, label, onClick }) {
             className="
           text-2xl font-bold text-white
           transition-all
-          hover:ml-2  /* hover时往右移动2px */
+          hover:ml-2
         "
         >
           {label}
