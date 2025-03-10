@@ -33,12 +33,12 @@ export const newsletter = [
     name: "She Means Business: Women Breaking into FinTech",
     date: "October 12, 2024",
     description:
-      "Despite fintech’s male-dominated culture, women can break barriers by embracing interdisciplinary learning" +
-        ", strategic thinking, and self-advocacy to drive innovation and inclusivity.",
+      "Despite fintech’s male-dominated culture, women can break barriers by embracing interdisciplinary learning, strategic thinking, and self-advocacy to drive innovation and inclusivity. +" +
+        "Now, more than ever, it’s crucial for women to enter these fields, as they are at the forefront of innovation — innovation that shapes our daily lives.",
     authorHeadshot: unknown,
     author: "Anjola Babalola & Piya Sarkar & Yulan Wang",
     img: womenInTech,
     navLink:
-      "https://disrupt-fintech.medium.com/moodys-adoption-of-ai-a-game-changer-for-the-financial-services-industry-0fdc299b6f04",
+      "https://disrupt-fintech.medium.com/she-means-business-women-breaking-into-fintech-889127412f02",
   },
 ];
