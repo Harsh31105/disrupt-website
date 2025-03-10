@@ -1,59 +1,96 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import readMoreArrow from "../../img/ReadMoreRightArrow.svg";
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { Navigation, Pagination, Scrollbar } from "swiper/modules";
+import { CARD } from "./PastVenturesConstants";
 
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};
+export default function PastVenturesGallery() {
+    const [openYear, setOpenYear] = useState(null);
 
-// Get rid of NavLink section if you don't want to make individual pages for ventures
+    const toggleYear = (year) => {
+        setOpenYear(openYear === year ? null : year);
+    };
 
-export default function PastVentureCard(props) {
-  return (
-    <div className="relative w-130 px-10">
-      <div className="relative group border-2 rounded-md">
-        <img
-          className="rounded-sm w-120 transition duration-300 ease-in-out filter brightness-100 group-hover:brightness-25"
-          src={props.image}
-          alt={props.alt}
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-0 transition duration-300 ease-in-out opacity-100 group-hover:opacity-100">
-          <div className="absolute bottom-0 right-10 text-white p-4 opacity-100 group-hover:opacity-0">
-            <h3
-              className="text-white font-bold mb-0"
-              style={{
-                fontFamily: "Faucet",
-                fontFeatureSettings: "'ss03' on, 'ss02' on, 'ss01' on",
-              }}
-            >
-              {props.header}
-            </h3>
-          </div>
-          <div className="absolute top-4 left-10 text-white p-4 opacity-0 group-hover:opacity-100">
-            <p
-              className="text-white font-bold mb-0"
-              style={{
-                fontFamily: "Faucet",
-                fontFeatureSettings: "'ss03' on, 'ss02' on, 'ss01' on",
-              }}
-            >
-              {props.header}
-            </p>
-            <p
-              className="text-white text-lg mr-8 mb-0 mt-5"
-              style={{ fontFamily: "Usual-Regular" }}
-            >
-              {props.description}
-            </p>
-            <NavLink onClick={scrollToTop} to="/finnovate">
-              <div className="flex items-center text-sm text-[#b5f727] mt-20">
-                <p className="mr-2">Read About The Event</p>
-                <img src={readMoreArrow} alt="rightArrow" className="mt-0.5" />
-              </div>
-            </NavLink>
-          </div>
+    const uniqueYears = [...new Set(CARD.map((card) => card.year))];
+
+    return (
+        <div className="w-full max-w-screen-lg mx-auto mt-[-30px]">
+            {uniqueYears.map((year, index) => (
+                <div key={index} className="mb-4">
+                    <button
+                        onClick={() => toggleYear(year)}
+                        className="w-full text-left bg-gray-800 text-white py-3 px-5 text-2xl font-semibold rounded-lg
+                      hover:bg-gray-700 transition shadow-md"
+                    >
+                        {year}
+                    </button>
+
+                    {openYear === year && (
+                        <div className="mt-4 p-6 bg-gray-900 rounded-lg shadow-lg transform -translate-y-5">
+                            <Swiper
+                                modules={[Navigation, Pagination, Scrollbar]}
+                                navigation={true}
+                                pagination={{ clickable: true }}
+                                scrollbar={{ draggable: true }}
+                                spaceBetween={30}
+                                slidesPerView={3}
+                                breakpoints={{
+                                    768: { slidesPerView: 2 },
+                                    1024: { slidesPerView: 3 },
+                                }}
+                                loop={false}
+                                className="w-full"
+                            >
+                                {CARD.filter((card) => card.year === year).map((card) => (
+                                    <SwiperSlide key={card.key}>
+                                        <div className="text-white text-center relative">
+                                            {/* Switching between Figma / Google Slides / PDF */}
+                                            {card.type === "figma" ? (
+                                                <iframe
+                                                    src={card.figmaEmbedLink}
+                                                    className="w-full h-[300px] rounded-md border-none"
+                                                    allowFullScreen
+                                                ></iframe>
+                                            ) : card.type === "googleSlides" ? (
+                                                <iframe
+                                                    src={card.googleSlidesEmbedLink}
+                                                    className="w-full h-[300px] rounded-md border-none"
+                                                    allowFullScreen
+                                                ></iframe>
+                                            ) : (
+                                                <iframe
+                                                    src={`https://drive.google.com/file/d/${card.pdfEmbedLink.split('/d/')[1].split('/')[0]}/preview`} // ✅ 处理 Google Drive PDF 预览
+                                                    className="w-full h-[300px] rounded-md border-none"
+                                                    allowFullScreen
+                                                ></iframe>
+                                            )}
+
+                                            <a
+                                                href={card.type === "figma" ? card.figmaDeckLink : card.type === "googleSlides" ? card.googleSlidesFullLink : card.pdfFullLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="absolute top-2 right-2 bg-white px-3 py-1 text-black rounded-md shadow-md text-sm hover:bg-gray-200"
+                                            >
+                                                View Fullscreen
+                                            </a>
+
+                                            <h3 className="mt-3 text-xl font-bold">{card.header}</h3>
+                                            <p className="text-gray-300">{card.description}</p>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
+                    )}
+                </div>
+            ))}
         </div>
-      </div>
-    </div>
-  );
+    );
 }
+
+
+
+
