@@ -17,80 +17,85 @@ export default function PastVenturesGallery() {
     const uniqueYears = [...new Set(CARD.map((card) => card.year))];
 
     return (
-        <div className="w-full max-w-screen-lg mx-auto mt-[-30px]">
-            {uniqueYears.map((year, index) => (
-                <div key={index} className="mb-4">
-                    <button
-                        onClick={() => toggleYear(year)}
-                        className="w-full text-left bg-gray-800 text-white py-3 px-5 text-2xl font-semibold rounded-lg
-                      hover:bg-gray-700 transition shadow-md"
-                    >
-                        {year}
-                    </button>
+        <div className="w-full max-w-screen-lg mx-auto mt-6">
+            {uniqueYears.map((year, index) => {
+                const projects = CARD.filter((card) => card.year === year);
+                return (
+                    <div key={index} className="mb-6">
+                        <button
+                            onClick={() => toggleYear(year)}
+                            className={`w-full flex flex-col items-start bg-gradient-to-r from-gray-700 to-gray-800 text-white py-4 px-6 text-2xl font-semibold rounded-lg
+                            hover:bg-gray-600 transition shadow-md transform hover:scale-105 duration-300 ease-in-out`}
+                        >
+                            <div className="flex justify-between w-full items-center">
+                                <span>{year}</span>
+                                <span className="text-lg">{openYear === year ? "▲" : "▼"}</span>
+                            </div>
+                            <p className="text-sm text-gray-300 mt-1">
+                                {projects.slice(0, 3).map((proj) => proj.header).join(" • ")}
+                            </p>
+                        </button>
 
-                    {openYear === year && (
-                        <div className="mt-4 p-6 bg-gray-900 rounded-lg shadow-lg transform -translate-y-5">
-                            <Swiper
-                                modules={[Navigation, Pagination, Scrollbar]}
-                                navigation={true}
-                                pagination={{ clickable: true }}
-                                scrollbar={{ draggable: true }}
-                                spaceBetween={30}
-                                slidesPerView={3}
-                                breakpoints={{
-                                    768: { slidesPerView: 2 },
-                                    1024: { slidesPerView: 3 },
-                                }}
-                                loop={false}
-                                className="w-full"
-                            >
-                                {CARD.filter((card) => card.year === year).map((card) => (
-                                    <SwiperSlide key={card.key}>
-                                        <div className="text-white text-center relative">
-                                            {/* Switching between Figma / Google Slides / PDF */}
-                                            {card.type === "figma" ? (
-                                                <iframe
-                                                    src={card.figmaEmbedLink}
-                                                    className="w-full h-[300px] rounded-md border-none"
-                                                    allowFullScreen
-                                                ></iframe>
-                                            ) : card.type === "googleSlides" ? (
-                                                <iframe
-                                                    src={card.googleSlidesEmbedLink}
-                                                    className="w-full h-[300px] rounded-md border-none"
-                                                    allowFullScreen
-                                                ></iframe>
-                                            ) : (
-                                                <iframe
-                                                    src={`https://drive.google.com/file/d/${card.pdfEmbedLink.split('/d/')[1].split('/')[0]}/preview`} // ✅ 处理 Google Drive PDF 预览
-                                                    className="w-full h-[300px] rounded-md border-none"
-                                                    allowFullScreen
-                                                ></iframe>
+                        {openYear === year && (
+                            <div className="mt-4 p-6 bg-gray-900 rounded-lg shadow-lg transform transition-all duration-300 ease-in-out">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                    {projects.map((card) => (
+                                        <div key={card.key} className="text-white text-center relative bg-gray-800 bg-opacity-80 p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105 min-h-[220px] flex flex-col justify-between">
+
+                                            <div className="relative w-full h-[250px] overflow-hidden rounded-md flex items-center justify-center bg-gray-900">
+                                                {card.type === "figma" ? (
+                                                    <iframe
+                                                        src={card.figmaEmbedLink}
+                                                        className="w-full h-full rounded-md border-none"
+                                                        allowFullScreen
+                                                    ></iframe>
+                                                ) : card.type === "googleSlides" ? (
+                                                    <iframe
+                                                        src={card.googleSlidesEmbedLink}
+                                                        className="w-full h-full rounded-md border-none"
+                                                        allowFullScreen
+                                                    ></iframe>
+                                                ) : card.type === "canva" ? (
+                                                    <iframe
+                                                        src={card.canvaEmbedLink}
+                                                        className="w-full h-full rounded-md border-none"
+                                                        allowFullScreen
+                                                    ></iframe>
+                                                ) : (
+                                                    <iframe
+                                                        src={card.pdfEmbedLink}
+                                                        className="w-full h-full rounded-md border-none"
+                                                        allowFullScreen
+                                                    ></iframe>
+                                                )}
+                                            </div>
+
+                                            {card.type !== "pdf" && (
+                                                <a
+                                                    href={card.type === "figma" ? card.figmaDeckLink
+                                                        : card.type === "googleSlides" ? card.googleSlidesFullLink
+                                                            : card.type === "canva" ? card.canvaFullLink
+                                                                : ""}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="absolute top-2 right-2 bg-white px-3 py-1 text-black rounded-md shadow-md text-sm hover:bg-gray-200"
+                                                >
+                                                    View Fullscreen
+                                                </a>
                                             )}
 
-                                            <a
-                                                href={card.type === "figma" ? card.figmaDeckLink : card.type === "googleSlides" ? card.googleSlidesFullLink : card.pdfFullLink}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="absolute top-2 right-2 bg-white px-3 py-1 text-black rounded-md shadow-md text-sm hover:bg-gray-200"
-                                            >
-                                                View Fullscreen
-                                            </a>
-
-                                            <h3 className="mt-3 text-xl font-bold">{card.header}</h3>
-                                            <p className="text-gray-300">{card.description}</p>
+                                            <div className="mt-3">
+                                                <h3 className="text-xl font-bold">{card.header}</h3>
+                                                <p className="text-gray-300 text-sm">{card.description}</p>
+                                            </div>
                                         </div>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </div>
-                    )}
-                </div>
-            ))}
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                );
+            })}
         </div>
     );
 }
-
-
-
-
