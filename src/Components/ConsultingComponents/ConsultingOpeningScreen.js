@@ -36,7 +36,10 @@ export default function PastVenturesOpeningScreen({
           <p className="flex-col pb-8 text-4xl text-white sm:text-2xl md:text-5xl" style={{ fontFeatureSettings: "'dlig' on, 'ss02' on, 'ss01' on" }}>
             CONSULTING
           </p>
-          <p className="mx-auto text-justify text-white" style={{ fontFamily: "Usual-Regular" }}>
+          <p
+              className="mx-auto text-justify text-white max-w-3xl text-sm sm:text-base md:text-lg"
+              style={{ fontFamily: 'Usual-Regular', hyphens: 'auto' }}
+          >
             Disrupt Consulting is a pro-bono student consulting club specializing in fintech solutions.
             Founded out of Northeastern University, we provide high-impact consulting services to startups and established firms, bridging gaps in market strategy, technical development, and regulatory compliance.
             Our work delivers actionable insights, innovative strategies, and scalable solutions to fintech companies looking to optimize their operations and expand their reach.
@@ -45,9 +48,9 @@ export default function PastVenturesOpeningScreen({
       </div>
 
       {/* Arrow Down Button */}
-      <div className="mt-12 mr-16 sm:flex sm:flex-col sm:items-end">
+      <div className="mt-12 flex justify-center sm:justify-end mr-0 sm:mr-16">
         <button>
-          <img src={arrowDown} alt="Scroll Down" />
+          <img src={arrowDown} alt="Scroll Down" className="w-8 h-8 sm:w-10 sm:h-10" />
         </button>
       </div>
     </div>

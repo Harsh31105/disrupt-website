@@ -11,11 +11,12 @@ export default function WhyWorkWithUs() {
         <p className="text-2xl font-usual-light mb-12">
           Proven impact. Data-driven execution. Technical innovation. Cost-effective, student-powered consulting for fintech transformation.
         </p>
-        <div className="grid md:grid-cols-3 gap-10 justify-items-center">
+        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {CARD.map((card) => (
-            <ConsultingBenefitCard key={card.key} header={card.header} img={card.img} description={card.description} />
+              <ConsultingBenefitCard key={card.key} header={card.header} img={card.img} description={card.description} />
           ))}
         </div>
+
       </section>
 
         <section className="px-6 py-20 max-w-6xl mx-auto text-white">
