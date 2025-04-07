@@ -7,7 +7,7 @@ export const CARD = [
     figmaEmbedLink: "https://www.figma.com/embed?embed_host=figma&url=https://www.figma.com/deck/20nOlL3vzRL0htnLVVBZQj/Mist-Presentation?node-id=1-141&t=5dWKL7heI9Fx15Uk-1",
     figmaDeckLink: "https://www.figma.com/deck/20nOlL3vzRL0htnLVVBZQj/Mist-Presentation?node-id=1-141&t=5dWKL7heI9Fx15Uk-1",
     header: "1st: Mist",
-    description: "Created by Michael Salzman, Sid Kerkar",
+    description: "Michael Salzman, Sid Kerkar",
   },
   {
     key: "fall2024-2",
@@ -16,7 +16,7 @@ export const CARD = [
     googleSlidesEmbedLink: "https://docs.google.com/presentation/d/1LuCNacdDLT-C9PZmBZWFzP-DwXk-9FHE/embed",
     googleSlidesFullLink: "https://docs.google.com/presentation/d/1LuCNacdDLT-C9PZmBZWFzP-DwXk-9FHE/edit#slide=id.p2",
     header: "2nd: Cliq",
-    description: "Created by Ekaterina Levinton, Maggie Chua",
+    description: "Ekaterina Levinton, Maggie Chua",
   },
   {
     key: "fall2024-3",
@@ -25,7 +25,7 @@ export const CARD = [
     pdfEmbedLink: "https://drive.google.com/file/d/1pxNH_K8n7hwnAmb2PHc3D7OfDxf4KPAa/preview",
     pdfFullLink: "https://drive.google.com/file/d/1pxNH_K8n7hwnAmb2PHc3D7OfDxf4KPAa/view?usp=sharing",
     header: "3rd: LoanPilot",
-    description: "Created by Kiki Liu, Sathvika Mudunuri, Shreyashi Kalakuntla, Swar Kewalia, Tyler Kim",
+    description: "Kiki Liu, Sathvika Mudunuri, Shreyashi Kalakuntla, Swar Kewalia, Tyler Kim",
   },
 
   // 📌 Spring 2024
