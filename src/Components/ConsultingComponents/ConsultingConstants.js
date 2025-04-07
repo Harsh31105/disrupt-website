@@ -9,20 +9,20 @@ export const CARD = [
     header: content.consulting.consultingBenefits.benefit1,
     img: consultingImg1,
     description:
-      "There's no FinTech without tech. We can produce innovative technical solutions that fit your needs.",
+        "There's no FinTech without tech. We can produce innovative technical solutions that fit your needs.",
   },
   {
     key: "benefit2",
     header: content.consulting.consultingBenefits.benefit2,
     img: consultingImg2,
     description:
-      "FinTech grows rapidly, and so might your goals. We're able to pivot easily and address multiple problems through our engagement.",
+        "FinTech grows rapidly, and so might your goals. We're able to pivot easily and address multiple problems through our engagement.",
   },
   {
     key: "benefit3",
     header: content.consulting.consultingBenefits.benefit3,
     img: consultingImg3,
     description:
-      "Our team will provide tailored, actionable help built on an experienced background in FinTech.",
+        "Our team will provide tailored, actionable help built on an experienced background in FinTech.",
   },
 ];

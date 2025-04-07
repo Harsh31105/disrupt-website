@@ -37,7 +37,9 @@ export default function PastVenturesOpeningScreen({
             CONSULTING
           </p>
           <p className="mx-auto text-justify text-white" style={{ fontFamily: "Usual-Regular" }}>
-            We empower FinTech organizations to tackle business challenges through pro-bono consulting...
+            Disrupt Consulting is a pro-bono student consulting club specializing in fintech solutions.
+            Founded out of Northeastern University, we provide high-impact consulting services to startups and established firms, bridging gaps in market strategy, technical development, and regulatory compliance.
+            Our work delivers actionable insights, innovative strategies, and scalable solutions to fintech companies looking to optimize their operations and expand their reach.
           </p>
         </div>
       </div>
@@ -51,3 +53,4 @@ export default function PastVenturesOpeningScreen({
     </div>
   );
 }
+
