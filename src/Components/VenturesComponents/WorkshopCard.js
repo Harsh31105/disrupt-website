@@ -71,9 +71,9 @@ const COLOR_CLASSES = [
         dot: "bg-teal-400",
     },
     {
-        bg: "bg-gradient-to-r from-orange-400 to-orange-300",
+        bg: "bg-gradient-to-r from-sky-400 to-sky-300",
         text: "text-gray-900",
-        dot: "bg-orange-400",
+        dot: "bg-sky-400",
     },
     {
         bg: "bg-gradient-to-r from-green-400 to-green-300",
@@ -81,9 +81,9 @@ const COLOR_CLASSES = [
         dot: "bg-green-400",
     },
     {
-        bg: "bg-gradient-to-r from-pink-400 to-pink-300",
+        bg: "bg-gradient-to-r from-lime-300 to-lime-200",
         text: "text-gray-900",
-        dot: "bg-pink-400",
+        dot: "bg-lime-300",
     },
 ];
 

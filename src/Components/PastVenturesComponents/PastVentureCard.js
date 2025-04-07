@@ -85,7 +85,7 @@ export default function PastVenturesGallery() {
                                             )}
 
                                             <div className="mt-3">
-                                                <h3 className="text-xl font-bold">{card.header}</h3>
+                                                {/*<h3 className="text-xl font-bold">{card.header}</h3>*/}
                                                 <p className="text-gray-300 text-sm">{card.description}</p>
                                             </div>
                                         </div>
