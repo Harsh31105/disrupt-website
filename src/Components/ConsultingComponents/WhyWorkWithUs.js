@@ -11,11 +11,17 @@ export default function WhyWorkWithUs() {
         <p className="text-2xl font-usual-light mb-12">
           Proven impact. Data-driven execution. Technical innovation. Cost-effective, student-powered consulting for fintech transformation.
         </p>
-        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
-          {CARD.map((card) => (
-              <ConsultingBenefitCard key={card.key} header={card.header} img={card.img} description={card.description} />
-          ))}
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-stretch">
+              {CARD.map(card => (
+                  <ConsultingBenefitCard
+                      key={card.key}
+                      header={card.header}
+                      img={card.img}
+                      alt={card.header}
+                      description={card.description}
+                  />
+              ))}
+          </div>
 
       </section>
 
