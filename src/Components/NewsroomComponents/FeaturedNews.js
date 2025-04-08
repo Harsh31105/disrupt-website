@@ -20,11 +20,12 @@ function FeaturedCard(props) {
                 </h3>
                 <NavLink
                     to={props.navLink}
-                    className="px-4 py-2 mt-2 text-sm text-white border border-solid rounded-md md:mt-0 md:text-base"
-                    style={{fontFamily: "Usual-Light"}}
+                    className="px-4 py-2 mt-6 mb-4 text-sm text-white border border-white rounded-md hover:bg-white hover:text-black transition-all"
+                    style={{ fontFamily: "Usual-Light" }}
                 >
                     Read More
                 </NavLink>
+
             </div>
         </div>
     );
