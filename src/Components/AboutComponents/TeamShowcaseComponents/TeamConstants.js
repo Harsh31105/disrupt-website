@@ -186,7 +186,7 @@ export const TeamMember = [
     alt: "",
   },
   {
-    key: "member20",
+    key: "member21",
     headshot: unknownImage,
     name: "Cameron Ryan",
     position: "Quant Associate",
@@ -195,7 +195,7 @@ export const TeamMember = [
     alt: "",
   },
   {
-    key: "member21",
+    key: "member22",
     headshot: unknownImage,
     name: "Hannah Wimpy",
     position: "Quant Associate",
@@ -204,7 +204,7 @@ export const TeamMember = [
     alt: "",
   },
   {
-    key: "member22",
+    key: "member23",
     headshot: unknownImage,
     name: "Diya Jhamtani",
     position: "Quant Associate",
@@ -213,7 +213,7 @@ export const TeamMember = [
     alt: "",
   },
   {
-    key: "member23",
+    key: "member24",
     headshot: unknownImage,
     name: "Ved Naykude",
     position: "Quant Associate",
@@ -222,7 +222,7 @@ export const TeamMember = [
     alt: "",
   },
   {
-    key: "member24",
+    key: "member25",
     headshot: unknownImage,
     name: "Eesha Varma Gottumukkala",
     position: "Director of Consulting",
@@ -230,7 +230,7 @@ export const TeamMember = [
     linkedin: "https://www.linkedin.com/in/eeshavarma/",
     alt: "",
   },  {
-    key: "member25",
+    key: "member26",
     headshot: unknownImage,
     name: "Eshaan Mehta",
     position: "Consulting Associate",
@@ -238,7 +238,7 @@ export const TeamMember = [
     linkedin: "https://www.linkedin.com/in/eshaantm/",
     alt: "",
   },  {
-    key: "member26",
+    key: "member27",
     headshot: unknownImage,
     name: "Ved Naykude",
     position: "Consulting Associate",
