@@ -1,4 +1,8 @@
 export const TeamMember = [
+  { key: "arnavMishra-31", headshot: "../../../img/eboard_photos_F25/arnav_mishra.jpeg", name: "Arnav Mishra", position: "President", team: "E-Board", linkedin: "https://www.linkedin.com/in/arnav-mishra-1960001b1/", alt: "" },
+
+  { key: "nicoleSchubert-14", headshot: "", name: "Nicole Schubert", position: "Vice-President", team: "E-Board", linkedin: "", alt: "" },
+  { key: "rodrigoAldrey-32", headshot: "", name: "Rodrigo Aldrey", position: "Director of Technology", team: "E-Board", linkedin: "", alt: "" },
   { key: "ericaZheng-5", headshot: "https://media.licdn.com/dms/image/v2/D4E03AQE2aDDSJhCxTg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1730701214676?e=1762992000&v=beta&t=5GKoy-ul3ZgDqQ3Sc0hxGpuzkfHbWOK6I3k1_V5-cDM", name: "Erica Zheng", position: "Marketing & Events Director", team: "E-Board", linkedin: "https://www.linkedin.com/in/zhengerica/", alt: "" },
   { key: "xavierYu-20", headshot: "https://media.licdn.com/dms/image/v2/D5603AQElSyoIX6XMyA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727737161830?e=1762992000&v=beta&t=jZDMwAcdCSD7IsfPD638ooEQExPzC91AqnC9Y-cnqkc", name: "Xavier Yu", position: "Director of Research", team: "Research Team", linkedin: "https://www.linkedin.com/in/xavier-yu/", alt: "" },
   { key: "aileenRuan-1", headshot: "", name: "Aileen Ruan", position: "Events Coordinator", team: "Events Team", linkedin: "", alt: "" },
@@ -13,7 +17,6 @@ export const TeamMember = [
   { key: "anyaSolanki-11", headshot: "", name: "Anya Solanki", position: "Research Analyst", team: "Research Team", linkedin: "", alt: "" },
   { key: "eitanBerenfeld-12", headshot: "", name: "Eitan Berenfeld", position: "", team: "Quant Team", linkedin: "", alt: "" },
   { key: "cameronRyan-13", headshot: "", name: "Cameron Ryan", position: "", team: "Quant Team", linkedin: "", alt: "" },
-  { key: "nicoleSchubert-14", headshot: "", name: "Nicole Schubert", position: "Vice-President", team: "E-Board", linkedin: "", alt: "" },
   { key: "riyaMohandas-15", headshot: "", name: "Riya Mohandas", position: "", team: "Tech Team", linkedin: "", alt: "" },
   { key: "luluYu-16", headshot: "", name: "Lulu Yu", position: "Research Analyst", team: "Research Team", linkedin: "", alt: "" },
   { key: "oliviaYeung-17", headshot: "", name: "Olivia Yeung", position: "Treasurer", team: "E-Board", linkedin: "", alt: "" },
